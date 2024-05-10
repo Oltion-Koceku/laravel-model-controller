@@ -16,17 +16,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
             @foreach ($movies as $movie)
+            <tr>
                 <td>{{ $movie->id }}</td>
-                <td>{{ $movie->title }}</td>
-                <td>@{{ $movie->original_title }}</td>
-                <td>@{{ $movie->nationality }}</td>
-                <td>@{{ $movie->date }}</td>
-                <td>@{{ $movie->vote }}</td>
-            @endforeach
+                <td><a href="{{ route('movies-detail', ['id' => $movie->id]) }}">{{ $movie->title }}</a></td>
+                <td>{{ $movie->original_title }}</td>
+                <td>{{ $movie->nationality }}</td>
+                <td>{{ $movie->date }}</td>
+                <td>{{ $movie->vote }}</td>
 
-          </tr>
+            </tr>
+            @endforeach
 
         </tbody>
       </table>
